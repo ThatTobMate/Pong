@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  #container
+    canvas#canvas(width='700', height='750')
+    main#main
+        h1 Pong
+        h2.text-center.login-title Welcome #{user.firstName}.
+        a(href='/signout', class='text-center new-account') Sign Out
+        h2#notice
+        h3 Computer score
+        p#computer 0
+        h3 Your score
+        p#user 0
+        h2#rally
+        p#rally_score
+        #start Play
