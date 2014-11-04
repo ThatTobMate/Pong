@@ -24,9 +24,8 @@ $(document).keyup(function(){
   rally = 0
 
   function init(){
-    $('#rally').text("Let's go!");
     $('#rally_score').text("");
-    $('#notice').text("");
+    $('#notice').text("Let's go!");
     ctx = canvas.getContext('2d');
     WIDTH = canvas.width; //setting the canvas width
     HEIGHT = canvas.height; //setting the canvas height
@@ -128,15 +127,16 @@ $(document).keyup(function(){
         clearInterval(drawInterval);
 
         //while the alert popup is open, the code is frozen, so the line below alert will only run when the popup is closed.
-        $('#notice').text("Great shot!");
+        
         user ++
+        $('#notice').text("Great shot!");
         $('#user').text(user);
         $('#start').text("Serve");
       }else{ //when the ball hits the top paddle
         dy = -dy;
         rally ++
         if(rally >= 10){
-        $('#rally').text("What a game!");
+        $('#notice').text("What a game!");
         $('#rally_score').text("Rally: " + rally);
       }
       }
@@ -147,14 +147,13 @@ $(document).keyup(function(){
         dy = -dy;
         rally ++
         if(rally >= 10){
-        $('#rally').text("What a game!");
+        $('#notice').text("What a game!");
         $('#rally_score').text("Rally: " + rally);
       }
       }else{
         clearInterval(drawInterval);
-
-        $('#notice').text("Bad luck!");
         computer ++
+        $('#notice').text("Bad luck!");
         $('#computer').text(computer);
         $('#start').text("Serve");
       }

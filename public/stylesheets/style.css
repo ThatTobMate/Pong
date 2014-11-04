@@ -6,6 +6,7 @@ canvas{
   background-repeat: none;
 }
 
+
 #start{
 
   margin: 0 auto;
@@ -14,8 +15,9 @@ canvas{
   width: 100px;
   height: 50px;
   background-color: white;
-  color: green;
-  border: 5px solid green;
+  color: black;
+  border: 5px solid black;
+  box-shadow:1px 6px 5px #02010A;
 }
 
 #container{
@@ -36,13 +38,14 @@ body{
 
 #main{
   margin-left: 80px;
-  width: 500px;
+  width: 450px;
   background-color: rgba(246, 250, 248, 0.4);
-  height: 750px;
+  height: 700px;
   display: inline-block;
   vertical-align: top;
-  border:3px solid yellow;
+  border:3px solid white;
   font-family: 'Lobster Two', cursive;
+  position: absolute;
 }
 
 #main h1{
@@ -51,12 +54,21 @@ body{
   font-size: 80px;
 }
 #main h3{
-  color: white;
   font-size: 30px;
 }
 
+#notice{
+  text-align: center;
+}
+
+#rally_score{
+  text-align: center;
+  color: white;
+}
+
 #main p{
-  color: green;
+  font-size: 25px;
+  color: white;
 }
 
 
