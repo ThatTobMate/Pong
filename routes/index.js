@@ -38,6 +38,17 @@ module.exports = function(passport){
     failureFlash : true  
   }));
 
+  /* Handle Registration POST */
+router.put('/home', function(req, res) {
+    var db = req.db;
+    console.log(db);
+    db.collection('passport').insert(req.body, function(err, result){
+        res.send(
+            (err === null) ? { msg: '' } : { msg: err }
+        );
+    });
+});
+
   /* GET Home Page */
   router.get('/home', isAuthenticated, function(req, res){
     res.render('home', { user: req.user });

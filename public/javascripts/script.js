@@ -3,6 +3,8 @@ $(function(){
 
 $('#start').on('click', init)
 
+$('#save').on('click', addScore);
+
 $(document).keydown(function(){
   if(event.keyCode == 39){
     rightDown = true;
@@ -163,3 +165,30 @@ $(document).keyup(function(){
     y += dy;
   }
 })
+
+// Save high score
+function addScore(event) {
+    event.preventDefault();
+
+        var topScore = {
+            'highScore': rally
+        }
+        console.log(topScore)
+        $.ajax({
+            type: 'PUT',
+            data: topScore,
+            url: '/home',
+            dataType: 'JSON'
+        }).success(function( response ) {
+          console.log(response)
+
+            if (response.msg === '') {
+
+            }
+            else {
+
+                alert('Error: ' + response.msg);
+
+            }
+        });
+    }
